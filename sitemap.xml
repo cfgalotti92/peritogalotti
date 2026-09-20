@@ -33,6 +33,26 @@
   <url>
     <loc>https://peritogalotti.com.br/blog/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peritogalotti.com.br/blog/o-que-e-pericia-grafotecnica.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peritogalotti.com.br/blog/quanto-custa-pericia-grafotecnica.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peritogalotti.com.br/blog/pericia-grafotecnica-assinatura-falsa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peritogalotti.com.br/blog/pericia-grafotecnica-processo-civil.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
