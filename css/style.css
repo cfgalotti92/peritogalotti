@@ -234,8 +234,35 @@ h1,h2,h3,h4,h5 {
 
 .navbar__logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   line-height: 1.15;
+  text-decoration: none;
+}
+
+.navbar__logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.navbar__logo:hover .navbar__logo-icon {
+  background: rgba(201, 168, 76, 0.22);
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+
+.navbar__logo-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar__logo-name {
@@ -549,6 +576,7 @@ h1,h2,h3,h4,h5 {
 
 .hero__card-icon--green { background: #ECFDF5; color: #059669; }
 .hero__card-icon--blue  { background: #EFF6FF; color: #2563EB; }
+.hero__card-icon--gold  { background: rgba(201, 168, 76, 0.16); color: var(--gold); }
 
 .hero__card-value {
   font-family: var(--font-serif);
@@ -563,15 +591,103 @@ h1,h2,h3,h4,h5 {
   margin-top: 2px;
 }
 
+.hero__legal-watermark {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+
+.hero__legal-watermark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__legal-badge {
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  z-index: 3;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.4);
+  color: var(--white);
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 1s;
+  white-space: nowrap;
+}
+
+.hero__legal-badge svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.hero__legal-badge span {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #F8FAFC;
+}
+
 @media (max-width: 900px) {
   .hero__container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 40px;
+    padding-bottom: 50px;
   }
   .hero__subtitle { max-width: 100%; margin-left: auto; margin-right: auto; }
   .hero__stats { justify-content: center; }
   .hero__actions { justify-content: center; }
-  .hero__image-wrap { display: none; }
+  .hero__image-wrap {
+    display: flex;
+    margin: 24px auto 0;
+    max-width: 320px;
+  }
+  .hero__photo {
+    width: 270px;
+    height: 330px;
+  }
+  .hero__image-ring {
+    width: 310px;
+    height: 310px;
+  }
+  .hero__legal-watermark {
+    width: 310px;
+    height: 310px;
+  }
+  .hero__card--approval {
+    bottom: 15px;
+    left: -15px;
+    padding: 10px 14px;
+  }
+  .hero__card--laudos {
+    top: 15px;
+    right: -15px;
+    padding: 10px 14px;
+  }
+  .hero__legal-badge {
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+  }
+  .hero__legal-badge span {
+    font-size: .6875rem;
+  }
 }
 
 /* ── CREDENTIALS BAR ────────────────────────────────────── */
@@ -752,6 +868,14 @@ h1,h2,h3,h4,h5 {
   text-transform: uppercase;
   letter-spacing: .06em;
   margin-top: 4px;
+}
+
+.why__badge-icon {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
 }
 
 .why__content { padding-left: 16px; }
