@@ -1,69 +1,24 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contato | Renato Galotti — Perito Grafotécnico em Todo o Brasil</title>
-  <meta name="description" content="Entre em contato com o Perito Grafotécnico Renato Galotti. Atendimento para advogados, empresas e particulares. Solicite seu laudo ou parecer técnico.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://peritogalotti.com.br/contato.html">
+---
+import Layout from '../layouts/Layout.astro';
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://peritogalotti.com.br/contato.html">
-  <meta property="og:title" content="Contato | Renato Galotti — Perito Grafotécnico">
-  <meta property="og:description" content="Solicite orçamentos, análises de viabilidade e tire suas dúvidas diretamente com o Dr. Renato Galotti. Atendimento nacional ágil.">
-  <meta property="og:image" content="https://peritogalotti.com.br/img/renato-galotti-perito-grafotecnico.jpg">
+const title = 'Contato | Renato Galotti — Perito Grafotécnico em Todo o Brasil';
+const description = 'Entre em contato com o Perito Grafotécnico Renato Galotti. Atendimento para advogados, empresas e particulares. Solicite seu laudo ou parecer técnico.';
+---
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A1628'/><path d='m22 21 2.5-6.5 2.5 6.5c-.7.5-1.5.8-2.5.8s-1.8-.3-2.5-.8Zm-17 0 2.5-6.5 2.5 6.5c-.7.5-1.5.8-2.5.8s-1.8-.3-2.5-.8ZM10 27h12M16 5v22M6 10h2c2 0 5-1 8-3 3 2 6 3 8 3h2' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260921-v3">
-</head>
-<body>
-
-  <nav id="navbar" class="navbar navbar--solid" role="navigation" aria-label="Navegação principal">
-    <div class="navbar__inner">
-      <a href="index.html" class="navbar__logo" aria-label="Renato Galotti — Perito Grafotécnico">
-        <div class="navbar__logo-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
-            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/>
-            <path d="M7 21h10"/>
-            <path d="M12 3v18"/>
-            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>
-          </svg>
-        </div>
-        <div class="navbar__logo-text">
-          <span class="navbar__logo-name">Renato Galotti</span>
-          <span class="navbar__logo-title">Perito Grafotécnico</span>
-        </div>
-      </a>
-      <button id="nav-toggle" class="navbar__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul id="nav-menu" class="navbar__menu" role="menubar">
-        <li role="none"><a href="index.html" class="navbar__link" role="menuitem">Início</a></li>
-        <li role="none"><a href="servicos.html" class="navbar__link" role="menuitem">Serviços</a></li>
-        <li role="none"><a href="casos.html" class="navbar__link" role="menuitem">Casos</a></li>
-        <li role="none"><a href="sobre.html" class="navbar__link" role="menuitem">Sobre</a></li>
-        <li role="none"><a href="faq.html" class="navbar__link" role="menuitem">FAQ</a></li>
-        <li role="none"><a href="blog/" class="navbar__link" role="menuitem">Blog</a></li>
-        <li role="none" class="navbar__cta">
-          <a href="https://wa.me/5511976155381?text=Olá%2C+Dr.+Renato+Galotti!" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
+<Layout
+  title={title}
+  description={description}
+  isTransparentHeader={false}
+>
   <main id="main-content">
+
 
     <section class="page-hero" aria-label="Contato e Orçamentos">
       <div class="container">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb" vocab="https://schema.org/" typeof="BreadcrumbList">
             <li property="itemListElement" typeof="ListItem">
-              <a href="index.html" property="item" typeof="WebPage"><span property="name">Início</span></a>
+              <a href="/" property="item" typeof="WebPage"><span property="name">Início</span></a>
               <meta property="position" content="1">
             </li>
             <li class="breadcrumb__sep" aria-hidden="true">›</li>
@@ -177,52 +132,6 @@
       </div>
     </section>
 
+  
   </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__grid">
-        <div>
-          <div class="footer__brand-name">Renato Galotti</div>
-          <div class="footer__brand-title">Perito Grafotécnico</div>
-          <p class="footer__brand-desc">Especialista em análise de assinaturas, manuscritos e documentos. Atendimento judicial e extrajudicial em todo o Brasil.</p>
-        </div>
-        <div>
-          <div class="footer__col-title">Serviços</div>
-          <ul class="footer__links">
-            <li><a href="servicos.html#judicial" class="footer__link">Perícia Judicial</a></li>
-            <li><a href="servicos.html#extrajudicial" class="footer__link">Perícia Extrajudicial</a></li>
-            <li><a href="servicos.html#autenticidade" class="footer__link">Análise de Autenticidade</a></li>
-            <li><a href="servicos.html#consultoria" class="footer__link">Consultoria</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer__col-title">Navegação</div>
-          <ul class="footer__links">
-            <li><a href="sobre.html" class="footer__link">Sobre</a></li>
-            <li><a href="casos.html" class="footer__link">Casos</a></li>
-            <li><a href="faq.html" class="footer__link">FAQ</a></li>
-            <li><a href="blog/" class="footer__link">Blog</a></li>
-            <li><a href="contato.html" class="footer__link">Contato</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="footer__col-title">Contato</div>
-          <ul class="footer__links">
-            <li class="footer__link"><a href="tel:+5511976155381" class="footer__link">(11) 97615-5381</a></li>
-            <li class="footer__link"><a href="mailto:contato@peritogalotti.com.br" class="footer__link">contato@peritogalotti.com.br</a></li>
-            <li class="footer__link">São Paulo — SP</li>
-            <li class="footer__link">Atendimento Nacional</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <div>© <span id="year"></span> Renato Galotti — Perito Grafotécnico. Todos os direitos reservados.</div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js" defer></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+</Layout>

@@ -1,0 +1,10 @@
+# 301 Redirects para paridade total com URLs legadas
+/sobre.html /sobre/ 301
+/servicos.html /servicos/ 301
+/casos.html /casos/ 301
+/faq.html /faq/ 301
+/contato.html /contato/ 301
+/blog/o-que-e-pericia-grafotecnica.html /blog/o-que-e-pericia-grafotecnica/ 301
+/blog/quanto-custa-pericia-grafotecnica.html /blog/quanto-custa-pericia-grafotecnica/ 301
+/blog/pericia-grafotecnica-assinatura-falsa.html /blog/pericia-grafotecnica-assinatura-falsa/ 301
+/blog/pericia-grafotecnica-processo-civil.html /blog/pericia-grafotecnica-processo-civil/ 301

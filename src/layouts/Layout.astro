@@ -1,0 +1,259 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import '../styles/style.css';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  isTransparentHeader?: boolean;
+  noIndex?: boolean;
+  faqItems?: FAQItem[];
+  breadcrumbs?: BreadcrumbItem[];
+}
+
+const {
+  title = "Perito Grafotécnico | Renato Galotti — 100% de Aprovação em Todo o Brasil",
+  description = "Renato Galotti é perito grafotécnico com 100% de aprovação em laudos judiciais e extrajudiciais. Atendimento nacional. Análise de assinaturas, autenticidade de documentos e perícia grafotécnica.",
+  canonicalUrl = new URL(Astro.url.pathname, 'https://peritogalotti.com.br').href,
+  ogImage = "https://peritogalotti.com.br/img/renato-galotti-perito-grafotecnico.jpg",
+  isTransparentHeader = false,
+  noIndex = false,
+  faqItems,
+  breadcrumbs
+} = Astro.props;
+
+const defaultBreadcrumbs: BreadcrumbItem[] = breadcrumbs || [
+  { name: 'Início', url: 'https://peritogalotti.com.br/' }
+];
+
+const defaultFaqList = faqItems || [
+  {
+    question: "O que faz um perito grafotécnico?",
+    answer: "O perito grafotécnico é o profissional habilitado a analisar cientificamente assinaturas, rubricas e manuscritos para determinar sua autenticidade e autoria. Pode atuar em processos judiciais e em contextos extrajudiciais."
+  },
+  {
+    question: "Qual a diferença entre perito judicial e extrajudicial?",
+    answer: "O perito judicial atua em processos no Poder Judiciário, nomeado pelo juiz ou indicado pelas partes. O perito extrajudicial atua fora do âmbito judicial, emitindo laudos técnicos para acordos, negociações e inventários."
+  },
+  {
+    question: "O laudo grafotécnico tem validade legal?",
+    answer: "Sim. O laudo elaborado por perito habilitado tem plena validade legal como prova técnica no Poder Judiciário e em acordos extrajudiciais."
+  },
+  {
+    question: "Renato Galotti atende em todo o Brasil?",
+    answer: "Sim. O Dr. Renato Galotti presta serviços de perícia grafotécnica em todo o território nacional, com recebimento digital de documentos para triagem preliminar."
+  }
+];
+
+const supremeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["ProfessionalService", "LegalService"],
+      "@id": "https://peritogalotti.com.br/#organization",
+      "name": "Renato Galotti — Perito Grafotécnico",
+      "alternateName": "Galotti Perícias Grafotécnicas",
+      "url": "https://peritogalotti.com.br",
+      "logo": "https://peritogalotti.com.br/img/renato-galotti-perito-grafotecnico.jpg",
+      "image": "https://peritogalotti.com.br/img/renato-galotti-perito-grafotecnico.jpg",
+      "description": "Serviços especializados de perícia grafotécnica judicial e extrajudicial em todo o Brasil. Análise científica de assinaturas, rubricas, manuscritos e documentos. 100% de aprovação em laudos.",
+      "telephone": "+55 11 97615-5381",
+      "email": "contato@peritogalotti.com.br",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paulista",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01310-000",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "47",
+        "reviewCount": "47"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Perícia Grafotécnica",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Perícia Grafotécnica Judicial",
+              "description": "Laudo pericial grafotécnico para processos judiciais em todo o Brasil."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Perícia Grafotécnica Extrajudicial",
+              "description": "Análise grafotécnica para fins extrajudiciais, contratos e inventários."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Análise de Autenticidade de Assinatura",
+              "description": "Verificação científica da autenticidade de assinaturas e rubricas."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laudo de Reconhecimento de Escrita",
+              "description": "Identificação da autoria de manuscritos e textos."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Parecer Técnico Grafotécnico",
+              "description": "Emissão de parecer especializado para subsidiar estratégias jurídicas."
+            }
+          }
+        ]
+      },
+      "founder": { "@id": "https://peritogalotti.com.br/#person" },
+      "sameAs": [
+        "https://www.linkedin.com/in/renato-galotti",
+        "https://peritogalotti.com.br"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://peritogalotti.com.br/#person",
+      "name": "Renato Galotti",
+      "jobTitle": "Perito Grafotécnico",
+      "description": "Renato Galotti é perito grafotécnico com vasta experiência em perícias judiciais e extrajudiciais, com 100% de aprovação em todos os laudos emitidos.",
+      "url": "https://peritogalotti.com.br/sobre/",
+      "image": "https://peritogalotti.com.br/img/renato-galotti-perito-grafotecnico.jpg",
+      "worksFor": { "@id": "https://peritogalotti.com.br/#organization" },
+      "knowsAbout": ["Grafotécnica", "Perícia Judicial", "Análise de Documentos", "Grafoscopia", "Documentoscopia"],
+      "sameAs": ["https://www.linkedin.com/in/renato-galotti"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": defaultFaqList.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer
+        }
+      }))
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://peritogalotti.com.br/#website",
+      "url": "https://peritogalotti.com.br",
+      "name": "Renato Galotti — Perito Grafotécnico",
+      "description": "Site oficial do Perito Grafotécnico Renato Galotti",
+      "publisher": { "@id": "https://peritogalotti.com.br/#organization" },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": defaultBreadcrumbs.map((bc, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": bc.name,
+        "item": bc.url
+      }))
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="perito grafotécnico, perícia grafotécnica, laudo grafotécnico, análise de assinatura, autenticidade de documentos, perito judicial, perícia extrajudicial, Renato Galotti">
+  <meta name="author" content="Renato Galotti">
+  <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large"}>
+  <link rel="canonical" href={canonicalUrl}>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content={canonicalUrl}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Renato Galotti — Perito Grafotécnico">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+
+  <!-- Favicon com Balança da Justiça -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230A1628'/><path d='m22 21 2.5-6.5 2.5 6.5c-.7.5-1.5.8-2.5.8s-1.8-.3-2.5-.8Zm-17 0 2.5-6.5 2.5 6.5c-.7.5-1.5.8-2.5.8s-1.8-.3-2.5-.8ZM10 27h12M16 5v22M6 10h2c2 0 5-1 8-3 3 2 6 3 8 3h2' fill='none' stroke='%23C9A84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Supreme Schema JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify(supremeSchema)} />
+</head>
+<body>
+  <Header isTransparent={isTransparentHeader} />
+
+  <slot />
+
+  <Footer />
+  <WhatsAppFloat />
+
+  <script is:inline src="/js/main.js"></script>
+</body>
+</html>

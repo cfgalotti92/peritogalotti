@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página Não Encontrada (404) | Renato Galotti — Perito Grafotécnico"
+  description="A página que você está procurando não foi encontrada. Conheça os serviços de perícia grafotécnica do Dr. Renato Galotti."
+  noIndex={true}
+>
+  <main id="main-content" style="min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 140px 20px 80px;">
+    <div class="container" style="max-width: 600px;">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); margin-bottom: 16px;">404</h1>
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; margin-bottom: 16px;">Página Não Encontrada</h2>
+      <p style="color: #9BA3AF; margin-bottom: 32px; line-height: 1.6;">
+        O link que você acessou pode ter sido alterado ou não existe mais. Retorne para a página inicial ou entre em contato com o Dr. Renato Galotti.
+      </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn btn--primary">Voltar ao Início</a>
+        <a href="/contato/" class="btn btn--outline">Fale Conosco</a>
+      </div>
+    </div>
+  </main>
+</Layout>
