@@ -1,12 +1,12 @@
 # Cloudflare Pages Custom Headers — Renato Galotti Perito Grafotécnico
 
-# Static Assets (Images, CSS, JS) — Cache for 1 Year Immutable
+# Static Assets (CSS, JS) — Fresh Revalidation
 /css/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
 
 /js/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
 
 /img/*
